@@ -29,7 +29,7 @@ public class GitHubServiceImpl implements GitHubService {
 				}
 				accountService.create(gitHub.getMyself().getLogin(), token);
 			} catch (IOException e) {
-				e.printStackTrace();
+				throw new GitHubInvalidToken();
 			}
 		} else {
 			throw new GitHubTokenEmptyException();
