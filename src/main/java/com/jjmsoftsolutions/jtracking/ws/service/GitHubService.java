@@ -4,5 +4,7 @@ import org.kohsuke.github.GitHub;
 
 public interface GitHubService {
 	GitHub connectUsingOAuth(String token);
+	GitHub createMembershipUsingOAuth(String token);
 	GitHub addRepository(String token, String repository);
+	GitHub getGitHubAccountByUserInSession();
 }

@@ -41,14 +41,12 @@ public class CachingConfig implements CachingConfigurer {
     }
 
 	@Override
-	public CacheResolver cacheResolver() {
-		// TODO Auto-generated method stub
+	public CacheResolver cacheResolver() {	
 		return null;
 	}
 
 	@Override
 	public CacheErrorHandler errorHandler() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }

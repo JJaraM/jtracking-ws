@@ -4,20 +4,20 @@
  */
 package com.jjmsoftsolutions.jtracking.ws.dao;
 
-import com.jjmsoftsolutions.jtracking.specification.Account;
+import com.jjmsoftsolutions.jtracking.specification.User;
 
 /**
- * Data access layer for account operations
+ * Data access layer for user operations
  * @author Jonathan Jara Morales
  * @since 0.0.1
  * @version 0.0.1
  */
-public interface AccountDAO {
+public interface UserDAO {
 	
 	/**
-	 * Save an {@link Account}
-	 * @param account {@link Account}
-	 * @return a {@link Account} persisted
+	 * Find an {@link User}
+	 * @param id {@link Integer} 
+	 * @return an {@link User}
 	 */
-	Account save(Account account);
+	User findById(Integer id);
 }
