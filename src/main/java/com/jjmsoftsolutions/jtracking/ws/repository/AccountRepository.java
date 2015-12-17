@@ -5,6 +5,7 @@
 package com.jjmsoftsolutions.jtracking.ws.repository;
 
 import com.jjmsoftsolutions.jtracking.jpa.AccountJPA;
+import com.jjmsoftsolutions.jtracking.specification.Account;
 
 /**
  * Repository of Account
@@ -14,4 +15,10 @@ import com.jjmsoftsolutions.jtracking.jpa.AccountJPA;
  * @see CacheCrudRepository
  * @see AccountJPA
  */
-public interface AccountRepository extends CacheCrudRepository<AccountJPA, Integer> {}
+public interface AccountRepository extends CacheCrudRepository<AccountJPA, Integer> {
+	
+	default public Account save(Account account) {
+		return save((AccountJPA)account);
+	}
+	
+}

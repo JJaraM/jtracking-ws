@@ -18,7 +18,7 @@ public class MembershipHistoryFactory {
 		return instance;
 	}
 	
-	public MembershipHistory createJPA(Membership membership) {
+	public MembershipHistory create(Membership membership) {
 		MembershipHistory record = new MembershipHistoryJPA();
 		record.setDate(new Date());
 		record.setMembership(membership);

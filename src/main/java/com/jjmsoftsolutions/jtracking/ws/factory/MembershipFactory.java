@@ -18,7 +18,7 @@ public class MembershipFactory {
 		return instance;
 	}
 	
-	public Membership createJPA(Account account, MembershipType type, String name, String token) {
+	public Membership create(Account account, MembershipType type, String name, String token) {
 		Membership membership = new MembershipJPA();
 		membership.setType(type);
 		membership.setName(name);

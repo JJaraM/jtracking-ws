@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.jjmsoftsolutions.jtracking.ws.service.GitHubService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+
 import org.springframework.http.MediaType;
 
 /**
@@ -38,7 +40,8 @@ public class GitHubController {
 			value = "Connect using OAuth", 
 			notes = "<p>Create API request to GitHub with the token. For the current request the user needs to be logged</p>")
 	@RequestMapping(value="/connectAndCreateUsingOAuth", method = RequestMethod.GET)
-	public ResponseEntity<String> connectUsingOAuth(@RequestParam(value="token", required=true) final String token) {
+	public ResponseEntity<String> connectUsingOAuth(
+			@ApiParam(value = "token to connect", required=true) @RequestParam(value="token", required=true) final String token) {
 		gitHubService.createMembershipUsingOAuth(token);
 		return new ResponseEntity<String>("The token is valid", HttpStatus.ACCEPTED);
 	}

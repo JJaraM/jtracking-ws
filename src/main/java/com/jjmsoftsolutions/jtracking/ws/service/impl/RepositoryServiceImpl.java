@@ -9,8 +9,8 @@ import org.kohsuke.github.GHRepository;
 import org.kohsuke.github.GitHub;
 import com.jjmsoftsolutions.jtracking.specification.Repository;
 import com.jjmsoftsolutions.jtracking.specification.enums.RepositoryType;
-import com.jjmsoftsolutions.jtracking.ws.dao.RepositoryDAO;
 import com.jjmsoftsolutions.jtracking.ws.factory.RepositoryFactory;
+import com.jjmsoftsolutions.jtracking.ws.repository.CVRepository;
 import com.jjmsoftsolutions.jtracking.ws.service.GitHubService;
 import com.jjmsoftsolutions.jtracking.ws.service.RepositoryService;
 import com.jjmsoftsolutions.jtracking.ws.service.SessionService;
@@ -18,7 +18,7 @@ import com.jjmsoftsolutions.jtracking.ws.service.SessionService;
 public class RepositoryServiceImpl implements RepositoryService {
 
 	@Resource private SessionService sessionService;
-	@Resource private RepositoryDAO repositoryDAO;
+	@Resource private CVRepository repositoryDAO;
 	@Resource private GitHubService gitHubService;
 	
 	@Override

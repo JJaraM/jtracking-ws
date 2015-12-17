@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 import com.jjmsoftsolutions.jtracking.specification.User;
+import com.jjmsoftsolutions.jtracking.ws.constants.SessionConstants;
 import com.jjmsoftsolutions.jtracking.ws.service.GitHubService;
 import com.jjmsoftsolutions.jtracking.ws.service.SessionService;
 import com.jjmsoftsolutions.jtracking.ws.service.UserService;
@@ -20,8 +21,8 @@ public class SessionServiceImpl implements SessionService {
 	public User getUser() {
 		User user = null;
 		HttpSession currentSession = request.getSession();
-		if (currentSession.getAttribute("user") != null) {
-			Integer id =  (Integer) currentSession.getAttribute("user");
+		if (currentSession.getAttribute(SessionConstants.USER) != null) {
+			Integer id =  (Integer) currentSession.getAttribute(SessionConstants.USER);
 			user = userService.findById(id);
 		}
 		return user;

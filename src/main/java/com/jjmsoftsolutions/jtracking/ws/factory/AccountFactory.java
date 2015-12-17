@@ -5,7 +5,6 @@
 package com.jjmsoftsolutions.jtracking.ws.factory;
 
 import com.jjmsoftsolutions.jtracking.jpa.AccountJPA;
-import com.jjmsoftsolutions.jtracking.specification.Account;
 import com.jjmsoftsolutions.jtracking.specification.User;
 
 /**
@@ -38,8 +37,8 @@ public class AccountFactory {
 	 * @param type specified the account's type
 	 * @return a new instance of {@link AccountJPA}
 	 */
-	public Account createJPA(String name, User user) {
-		Account account = new AccountJPA();
+	public AccountJPA create(String name, User user) {
+		AccountJPA account = new AccountJPA();
 		account.setUser(user);
 		return account;
 	}

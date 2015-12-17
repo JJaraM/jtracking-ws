@@ -16,7 +16,7 @@ public class UserFactory {
 		return instance;
 	}
 	
-	public User createEntity(String email, String password) {
+	public User create(String email, String password) {
 		User user = new UserJPA();
 		user.setEmail(email);
 		user.setPassword(password);
